@@ -35,7 +35,7 @@ class EventOneController extends Controller
         $total_enrollments = EventOne::all()
             ->where('email_verified_at', '!=', null)
             ->count();
-        if ($total_enrollments < 5)
+        if ($total_enrollments < 4)
 
             return view('applications.eventone.create');
         else
