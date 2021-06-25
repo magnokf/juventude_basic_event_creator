@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notification;
 
 class GoSendEmail extends Notification
 {
+    use Queueable;
 
     /**
      * Create a new notification instance.
