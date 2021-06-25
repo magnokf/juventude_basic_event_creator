@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\EventOneCreated;
 use App\Http\Requests\FormOneRequest;
 use App\Models\EventOne;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,7 +32,14 @@ class EventOneController extends Controller
      */
     public function create()
     {
-        return view('applications.eventone.create');
+        $total_enrollments = EventOne::all()
+            ->where('email_verified_at', '!=', null)
+            ->count();
+        if ($total_enrollments < 101)
+
+            return view('applications.eventone.create');
+        else
+            return view('applications.eventone.endenroll');
     }
 
     /**
@@ -40,22 +48,25 @@ class EventOneController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FormOneRequest $request ,EventOne $eventOne)
+    public function store(FormOneRequest $request)
     {
-        $create_event_one = EventOne::create($request->validated());
+        $enrollment = EventOne::create($request->validated());
 
-        event(new EventOneCreated($create_event_one));
+        event(new EventOneCreated($enrollment));
 
-       return redirect()->back();
+        return view('confirmations.chekemail', [
+            'uuid'=> $enrollment->uuid
+        ]);
     }
 
 
     public function confirmation($uuid)
     {
         $eventOne = EventOne::findByUuid($uuid);
+
         $eventOne->update(['email_verified_at' => now()]);
         $eventOne->save();
-         return view('confirmations.eventone');
+        return view('confirmations.eventone',['uuid' => $eventOne->uuid]);
     }
 
     /**
@@ -102,4 +113,6 @@ class EventOneController extends Controller
     {
         //
     }
+
+
 }

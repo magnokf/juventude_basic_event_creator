@@ -25,3 +25,4 @@ Route::get('/eventone', [EventOneController::class, 'create'])->name('inscricao'
 Route::resource('event_one', EventOneController::class)->except(['destroy', 'update']);
 Route::get('/confirmation-event/{uuid}/confirm', [EventOneController::class, 'confirmation'])->name('confirmation_event');
 
+

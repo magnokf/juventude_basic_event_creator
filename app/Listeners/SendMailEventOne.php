@@ -9,15 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 
 class SendMailEventOne
 {
-    /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+
 
     /**
      * Handle the event.
@@ -25,12 +17,10 @@ class SendMailEventOne
      * @param  EventOneCreated  $event
      * @return void
      */
-    public function handle(EventOneCreated $event)
+    public function handle($event)
     {
-        $eventOne = $event->getEventOne();
 
-        $eventOne->notify(new GoSendEmail($eventOne));
+        $event->enrollment->notify(new GoSendEmail($event->enrollment));
 
-        dd("Escutou o evento", $eventOne);
     }
 }

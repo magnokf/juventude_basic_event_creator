@@ -13,27 +13,19 @@ use Illuminate\Queue\SerializesModels;
 
 class EventOneCreated
 {
-    /**
-     * @return EventOne
-     */
-    public function getEventOne(): EventOne
-    {
-        return $this->eventOne;
-    }
-
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    /**
-     * @var EventOne $eventOne
-     */
-    private $eventOne;
+    public $enrollment;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(EventOne $eventOne)
+    public function __construct($enrollment)
     {
-        $this->eventOne  = $eventOne;
+        $this->enrollment  =$enrollment;
     }
+
+
 }

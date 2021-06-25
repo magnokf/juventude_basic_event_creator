@@ -19,15 +19,19 @@
                                 seu endereço de e-mail
                             </div>
                         @endif
-                        <p>Antes de prosseguir, verifique se há um link de verificação em seu e-mail. Se você não recebeu
-                            o e-mail,</p>
-                            <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                                @csrf
-                                <button type="submit" class="btn btn-link text-orange p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                            </form>
+                        <p>Para você confirmar sua inscrição, verifique se há um link de verificação em seu e-mail.
+{{--                            Se você não recebeu--}}
+{{--                            o e-mail,</p>--}}
+{{--                            <form class="d-inline" method="POST" action="{{ route('confirmation_event', ['uuid'=>$uuid]) }}">--}}
+{{--                                @csrf--}}
+{{--                                <button type="submit" class="btn btn-link text-orange p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.--}}
+{{--                            </form>--}}
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+

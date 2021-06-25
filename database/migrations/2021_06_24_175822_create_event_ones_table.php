@@ -14,7 +14,7 @@ class CreateEventOnesTable extends Migration
     public function up()
     {
         Schema::create('event_ones', function (Blueprint $table) {
-            $table->uuid('uuid');
+            $table->uuid('uuid')->primary();
             $table->string('name', 100);
             $table->string('email', 100)->unique();
             $table->string('phone', 30)->unique();

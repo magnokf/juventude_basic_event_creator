@@ -2,17 +2,14 @@
 
 namespace App\Notifications;
 
+use App\Models\EventOne;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class GoSendEmail extends Notification implements ShouldQueue
+class GoSendEmail extends Notification
 {
-    use Queueable;
-
-
-
 
     /**
      * Create a new notification instance.
@@ -21,8 +18,9 @@ class GoSendEmail extends Notification implements ShouldQueue
      */
     public function __construct()
     {
-        //
+
     }
+
 
     /**
      * Get the notification's delivery channels.
@@ -45,9 +43,12 @@ class GoSendEmail extends Notification implements ShouldQueue
     {
 
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', route('confirmation_event',['uuid' => $this->eventOne->uuid]))
-                    ->line('Thank you for using our application!');
+            ->subject("Confirmação da sua Inscrição -". config('app.name'))
+                    ->greeting("Olá ! $notifiable->name")
+                    ->line('Você está a um passo para confirmar sua inscrição no evento do dia xx/xx/2021.
+                    Basta clicar no botão de confirmação!!')
+                    ->action('Confirmar sua Inscrição', route('confirmation_event', $notifiable->uuid))
+                    ->line('Estaremos aguardando você lá!');
     }
 
     /**
@@ -59,7 +60,7 @@ class GoSendEmail extends Notification implements ShouldQueue
     public function toArray($notifiable)
     {
         return [
-            //
+
         ];
     }
 }
