@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Validator;
 
 class EventOneController extends Controller
 {
-
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +18,7 @@ class EventOneController extends Controller
      */
     public function index()
     {
-        //
+        return view('applications.eventone.index');
     }
 
     /**
