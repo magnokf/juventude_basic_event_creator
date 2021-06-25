@@ -44,9 +44,9 @@ class GoSendEmail extends Notification
     {
 
         return (new MailMessage)
-            ->subject("Confirmação da sua Inscrição -". config('app.name'))
+                    ->subject("Confirmação da sua Inscrição -". config('app.name'))
                     ->greeting("Olá ! $notifiable->name")
-                    ->line('Você está a um passo para confirmar sua inscrição no evento do dia xx/xx/2021.
+                    ->line('Você está a um passo para confirmar sua inscrição no evento do Dia 03/07/21 (Sábado) – Início com a Missa as 18:00 hs.
                     Basta clicar no botão de confirmação!!')
                     ->action('Confirmar sua Inscrição', route('confirmation_event', $notifiable->uuid))
                     ->line('Estaremos aguardando você lá!');
