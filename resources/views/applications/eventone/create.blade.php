@@ -14,7 +14,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-4">
-                    <img class="img-fluid" src="{{asset('storage/img/folder1.jpeg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('images/folder1.jpeg')}}" alt="">
                 </div>
                 <div class="col-12 col-lg-8">
                     <label class="">Nome:</label>
