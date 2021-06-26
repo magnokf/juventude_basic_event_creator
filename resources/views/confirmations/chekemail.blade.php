@@ -14,11 +14,7 @@
                     <h3 class="box-title">Verifique seu e-mail!!</h3>
 
                     <div class="box-body">
-                        @if (session('resent'))
-                            <div class="alert alert-success" role="alert">Em alguns instantes você receberá um novo link de verificação que foi enviado para
-                                seu endereço de e-mail
-                            </div>
-                        @endif
+
                         <p>Em alguns instantes você receberá por e-mail um link de <b>"Confirmação de Inscrição".</b></p>
                             <p>Verifique se há um link e faça lá a confirmação de sua inscrição.</p>
 {{--                            Se você não recebeu--}}
