@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta name="theme-color" content="#e08021">
+    <meta name="theme-color" content="#06BBF0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
