@@ -60,6 +60,11 @@
 
                             @endauth
                         </div>
+                        <div class="row">
+                            <div class="col mb-4 mt-4 text-center">
+                                <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/201</a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             <div class=" col-12 col-md-7" style="margin-top: 2%">
                 <div class="box">
-                    <img class="img-fluid" src="{{asset('storage/img/folder1.jpeg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('images/folder1.jpeg)}}" alt="">
                     <h3 class="box-title">Verifique seu e-mail!!</h3>
 
                     <div class="box-body">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventOneController;
 use App\Http\Controllers\HomeController;
+use App\Models\EventOne;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $total_enrollments = EventOne::all()
+        ->count();
+    $total_confirmed_enrollments = EventOne::all()
+        ->where('email_verified_at','!=',null )
+        ->count();
+    $total_not_confirmed_enrollments = EventOne::all()
+        ->where('email_verified_at','=',null )
+        ->count();
+
+    return view('welcome', [
+        'total_enrollments' => $total_enrollments,
+        'total_confirmed_enrollments'=>$total_confirmed_enrollments,
+        'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments,
+    ]);
+
 });
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
