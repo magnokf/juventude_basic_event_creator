@@ -33,7 +33,7 @@ Route::get('/', function () {
         'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments,
     ]);
 
-});
+})->name('principal');
 Auth::routes(['verify' => true]);
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::get('/eventone', [EventOneController::class, 'create'])->name('inscricao');
