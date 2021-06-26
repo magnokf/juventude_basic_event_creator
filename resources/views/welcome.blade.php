@@ -3,7 +3,8 @@
 <head>
     <meta name="theme-color" content="#06BBF0">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <title>JuvApp</title>
     <!-- Favicon -->
@@ -62,7 +63,11 @@
                         </div>
                         <div class="row">
                             <div class="col mb-4 mt-4 text-center">
-                                <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/201</a>
+                                <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/201</a><br>
+                                @if($total_not_confirmed_enrollments > 10)
+                                    <i class="far fa-hand-point-right"></i><span class="text-center justify-content-center"> Já temos {{$total_not_confirmed_enrollments}}
+                                 Inscrições Confirmadas.</span>
+                                @endif
                             </div>
                         </div>
                     </div>
