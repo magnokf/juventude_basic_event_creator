@@ -56,14 +56,14 @@
                             @auth
                                 <a class="btn bg-gradient-yellow m-3" href="{{ url('/home') }}">Acesso Permitido : {{Auth::user()->name}}</a>
                             @else
-                                <a class="p-1" href="{{ route('login') }}">Acesso Restrito</a>
+                                <i class="fas fa-user-lock"></i> <a class="p-1" href="{{ route('login') }}">Acesso Restrito</a>
 
 
                             @endauth
                         </div>
                         <div class="row">
                             <div class="col mb-4 mt-4 text-center">
-                                <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/201</a><br>
+                                <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/2021</a><br>
                                 @if($total_confirmed_enrollments > 10)
                                     <i class="far fa-hand-point-right"></i><span class="text-center justify-content-center"> Já temos {{$total_confirmed_enrollments}}
                                  Inscrições Confirmadas.</span>

@@ -1,4 +1,32 @@
 @extends('layouts.appold')
+@push('styles')
+    <style>
+        html, body {
+            background-color: #073563;
+            color: #e7d110;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+
+
+        }
+        a{
+            color: #e7d110;
+
+        }
+        a:link {
+            color: #e7d110;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e7d110;
+            text-decoration: none;
+        }
+
+
+    </style>
+@endpush
 @section('content')
     <div class="container">
         @foreach ($errors->all() as $message)
@@ -47,7 +75,7 @@
                                     </span>
                     @enderror
                     <br>
-                    <input type="submit" value="Salvar" class="btn btn-success">
+                    <input type="submit" value="Salvar" class="btn btn-success px-5 mr-5">
                     <input type="reset" value="Limpar" class="btn btn-danger">
 
                 </div>
