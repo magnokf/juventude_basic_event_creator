@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes([
+    'verify' => true,
+    'register'=>false
+]);
+
 Route::get('/', function () {
     $total_enrollments = EventOne::all()
         ->count();
@@ -34,7 +39,7 @@ Route::get('/', function () {
     ]);
 
 })->name('principal');
-Auth::routes(['verify' => true]);
+
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::get('/eventone', [EventOneController::class, 'create'])->name('inscricao');
 Route::resource('event_one', EventOneController::class)->except(['destroy', 'update']);
