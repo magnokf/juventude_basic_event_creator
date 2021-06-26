@@ -94,10 +94,16 @@
         <li class="nav-header"></li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a class="nav-link" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                 <i class="nav-icon far fa-circle text-danger"></i>
-                <p>Sair</p>
+                <p class="text">{{ __('Logout') }}</p>
             </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </li>
 
     </ul>
