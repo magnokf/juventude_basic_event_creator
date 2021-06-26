@@ -44,17 +44,23 @@
 <body>
 
 <form class="form-signin">
-    <div class="text-center mb-4">
-        <img class="mb-4 img-fluid mt-3" src="{{asset('images/folder1.jpeg')}}" alt="">
-        <h3 class="h3 mb-3 font-weight-normal">Juventude<b>App</b></h3>
-{{--        <p>Construa campos de formulário usando labels flutuantes, através do pseudo-elemento <code>:placeholder-shown</code>. <a href="https://caniuse.com/#feat=css-placeholder-shown">Funciona nas últimas versões do Chrome, Safari e Firefox.</a></p>--}}
-        @auth
-            <a class="btn bg-gradient-yellow m-3" href="{{ url('/home') }}">Acesso Permitido : {{Auth::user()->name}}</a>
-        @else
-            <a class="p-1" href="{{ route('login') }}">Acesso Restrito</a>
+    <div class="row"></div>
+        <div class="col mt-4">
+            <img class="img-fluid " src="{{asset('images/folder1.jpeg')}}" alt="">
+        </div>
+            <div class="text-center mb-4 mt-4">
+            <h3 class="h3 mb-3 mt-4 font-weight-normal">Juventude<b>App</b></h3>
+            {{--        <p>Construa campos de formulário usando labels flutuantes, através do pseudo-elemento <code>:placeholder-shown</code>. <a href="https://caniuse.com/#feat=css-placeholder-shown">Funciona nas últimas versões do Chrome, Safari e Firefox.</a></p>--}}
+            @auth
+                <a class="btn bg-gradient-yellow m-3" href="{{ url('/home') }}">Acesso Permitido : {{Auth::user()->name}}</a>
+            @else
+                <a class="p-1" href="{{ route('login') }}">Acesso Restrito</a>
 
 
-        @endauth
+            @endauth
+            </div>
+
+
     </div>
 </form>
 <div class="container-fluid">
