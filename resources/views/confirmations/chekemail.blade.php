@@ -15,8 +15,8 @@
 
                     <div class="box-body">
 
-                        <p>Em alguns instantes você receberá por e-mail um link de <b>"Confirmação de Inscrição".</b></p>
-                            <p>Verifique se há um link e faça lá a confirmação de sua inscrição.</p>
+                        <p>Em alguns instantes você receberá uma mensagem com um link da <b>"Confirmação da sua Inscrição".</b></p>
+                            <p>Se não encontrar a mensagem, verifique a sua caixa de lixo eletrônico (spam) ou aguarde mais alguns instantes.</p>
 {{--                            Se você não recebeu--}}
 {{--                            o e-mail,</p>--}}
 {{--                            <form class="d-inline" method="POST" action="{{ route('confirmation_event', ['uuid'=>$uuid]) }}">--}}
