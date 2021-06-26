@@ -10,6 +10,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "infyomlabs/laravel-ui-adminlte": "^3.1",
+        "jeroennoten/laravel-adminlte": "^3.6",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravellegends/pt-br-validator": "^8.0",

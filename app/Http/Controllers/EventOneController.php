@@ -18,7 +18,24 @@ class EventOneController extends Controller
      */
     public function index()
     {
-        return view('applications.eventone.index');
+        $total_enrollments = EventOne::all()
+            ->count();
+        $total_confirmed_enrollments = EventOne::all()
+            ->where('email_verified_at','!=',null )
+            ->count();
+        $total_not_confirmed_enrollments = EventOne::all()
+            ->where('email_verified_at','=',null )
+            ->count();
+        $inscritos = EventOne::all()
+            ->where('email_verified_at','!=', null);
+
+
+        return view('applications.eventone.index', [
+            'total_enrollments' => $total_enrollments,
+            'total_confirmed_enrollments'=>$total_confirmed_enrollments,
+            'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments,
+            'inscritos'=>$inscritos
+        ]);
     }
 
     /**
