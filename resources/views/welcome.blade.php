@@ -21,7 +21,7 @@
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
-            margin: 0;
+
 
         }
         a{
@@ -42,39 +42,35 @@
     </style>
 </head>
 <body>
-
-<form class="form-signin">
-    <div class="row"></div>
-        <div class="col mt-4">
-            <img class="img-fluid " src="{{asset('images/folder1.jpeg')}}" alt="">
-        </div>
-            <div class="text-center mb-4 mt-4">
-            <h3 class="h3 mb-3 mt-4 font-weight-normal">Juventude<b>App</b></h3>
-            {{--        <p>Construa campos de formulário usando labels flutuantes, através do pseudo-elemento <code>:placeholder-shown</code>. <a href="https://caniuse.com/#feat=css-placeholder-shown">Funciona nas últimas versões do Chrome, Safari e Firefox.</a></p>--}}
-            @auth
-                <a class="btn bg-gradient-yellow m-3" href="{{ url('/home') }}">Acesso Permitido : {{Auth::user()->name}}</a>
-            @else
-                <a class="p-1" href="{{ route('login') }}">Acesso Restrito</a>
+        <div class="container">
 
 
-            @endauth
-            </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="mb-4 mt-4 text-center">
+                            <img class="img-fluid rounded " src="{{asset('images/folder1.jpeg')}}" alt="">
 
 
-    </div>
-</form>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
+                            <h3 class="h3 mb-3 mt-4 font-weight-normal">Juventude<b>App</b></h3>
+                            @auth
+                                <a class="btn bg-gradient-yellow m-3" href="{{ url('/home') }}">Acesso Permitido : {{Auth::user()->name}}</a>
+                            @else
+                                <a class="p-1" href="{{ route('login') }}">Acesso Restrito</a>
 
 
+                            @endauth
+                        </div>
+                    </div>
 
+                </div>
 
 
 
 
         </div>
-    </div>
-</div>
+
+
+
+
 </body>
 </html>
