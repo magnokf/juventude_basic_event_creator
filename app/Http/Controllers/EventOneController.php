@@ -76,7 +76,7 @@ class EventOneController extends Controller
         $total_enrollments = EventOne::all()
             ->where('email_verified_at', '!=', null)
             ->count();
-        if ($total_enrollments < 101)
+        if ($total_enrollments < 100)
 
             return view('applications.eventone.create');
         else
@@ -108,6 +108,23 @@ class EventOneController extends Controller
         $eventOne->update(['email_verified_at' => now()]);
         $eventOne->save();
         return view('confirmations.eventone',['uuid' => $eventOne->uuid]);
+    }
+
+    public function manual_confirmed($uuid)
+    {
+        $eventOne = EventOne::findByUuid($uuid);
+        $eventOne->update(['email_verified_at' => now()]);
+        $eventOne->save();
+
+        toastr()->success("Inscrição confirmada manualmente com sucesso!.",
+            'Atenção - O registro de verificação foi definido manualmente',
+            ['closeButton'=>true,
+                'positionClass'=>'toast-top-right',
+                'timeOut'=>'4000'
+            ]);
+
+        return redirect()->back();
+
     }
 
     /**

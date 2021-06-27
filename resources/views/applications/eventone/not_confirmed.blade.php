@@ -1,4 +1,5 @@
 @extends('layouts.master')
+<title>Não Confirmadas </title>
 
 <!-- Content Header (Page header) -->
 @section('content-header')
@@ -10,7 +11,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                         <li class="breadcrumb-item active">Tabelas</li>
                     </ol>
                 </div>
@@ -55,9 +56,12 @@
                                         @csrf
                                         @method('DELETE')
 
+                                        <a onclick="return alert('Deseja que essa inscrição seja CONFIRMADA MANUALMENTE?' +
+                                         'Lembrando que não será possivel enviar e-mail de confirmação.')" class="btn btn-sm btn-primary mt-2" href="{{route('manual_confirmed', $i->uuid)}}">Confirmar Manualmente</a>
 
 
-                                        <button class="btn btn-sm btn-danger mt-2" type="submit" onclick="return confirm('Deseja Excluir DEFINITIVAMENTE? IMPOSSÍVEL ser recuperada');">
+
+                                        <button name="destroy" class="btn btn-sm btn-danger mt-2" type="submit" onclick="return confirm('Deseja Excluir DEFINITIVAMENTE? IMPOSSÍVEL ser recuperada');">
                                             <i class="fa fa-trash-alt"></i>
                                             Excluir
                                         </button>

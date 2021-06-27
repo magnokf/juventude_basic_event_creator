@@ -3,10 +3,13 @@
 <head>
     <meta name="theme-color" content="#06BBF0">
     <meta charset="utf-8">
+    <title>JuvApp</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <title>JuvApp</title>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url(asset('images/folder1.jpeg'))}}">
 
@@ -15,12 +18,15 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href=" {{asset('css/app.css')}}">
+
+
+
     <style>
         html, body {
             background-color: #073563;
             color: #e7d110;
             font-family: 'Nunito', sans-serif;
-            font-weight: 200;
+            font-weight: 500;
             height: 100vh;
 
 
@@ -44,9 +50,7 @@
 </head>
 <body>
         <div class="container">
-
-
-                <div class="row">
+            <div class="row">
                     <div class="col text-center">
                         <div class="mb-4 mt-4 text-center">
                             <img class="img-fluid rounded " src="{{asset('images/folder1.jpeg')}}" alt="">
@@ -63,21 +67,30 @@
                         </div>
                         <div class="row">
                             <div class="col mb-4 mt-4 text-center">
+                                @if($total_confirmed_enrollments < 100)
+                                    <i class="far fa-hand-point-right"></i> <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/2021</a><br>
 
-                                <i class="far fa-hand-point-right"></i> <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/2021</a><br>
-                                @if($total_confirmed_enrollments > 10)
-                                    <i class="far fa-hand-point-right"></i><span class="text-center justify-content-center"> Já temos {{$total_confirmed_enrollments}}
-                                 Inscrições Confirmadas.</span>
                                 @endif
+
+                                    @if($total_confirmed_enrollments > 10)
+                                        <i class="far fa-hand-point-right"></i><span class="text-center justify-content-center"> Já temos {{$total_confirmed_enrollments}}
+                                         Inscrições Confirmadas.</span>
+                                    @endif
+
+                                            @if($total_confirmed_enrollments == 100)
+                                                 <br>   <i class=" text-red far fa-hand-point-right"></i>
+                                                            <span class="text-center text-red justify-content-center">
+                                                                Inscrições estão ENCERRADAS!!!
+                                                            </span>
+                                            @endif
+
+
+
                             </div>
                         </div>
                     </div>
 
                 </div>
-
-
-
-
         </div>
 
 
