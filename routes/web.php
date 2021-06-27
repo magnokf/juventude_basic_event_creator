@@ -42,7 +42,7 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('verified');
 Route::get('/eventone', [EventOneController::class, 'create'])->name('inscricao');
-Route::get('/not_confirmed', [EventOneController::class, 'not_confirmed'])->name('not_confirmed')->middleware('auth');
+Route::get('/not_confirmed', [EventOneController::class, 'not_confirmed'])->name('not_confirmed');
 
 Route::resource('event_one', EventOneController::class);
 Route::get('/confirmation-event/{uuid}/confirm', [EventOneController::class, 'confirmation'])->name('confirmation_event');
