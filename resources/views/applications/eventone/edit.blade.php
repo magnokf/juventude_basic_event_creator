@@ -32,6 +32,7 @@
 
             </div>
             <div class="col-12 col-lg-6">
+                <input type="hidden" name="ip_address" value="{{$_SERVER['REMOTE_ADDR']}}">
                 <label for="">Nome:</label>
                 <input type="text" name="name" value="{{$eventOne->name ?? ''}}" class="form-control">
                 <label for="">E-mail:</label>

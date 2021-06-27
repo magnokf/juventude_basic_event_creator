@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class EventOneController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
