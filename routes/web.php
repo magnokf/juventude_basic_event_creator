@@ -44,7 +44,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware(
 Route::get('/eventone', [EventOneController::class, 'create'])->name('inscricao');
 Route::get('/not_confirmed', [EventOneController::class, 'not_confirmed'])->name('not_confirmed')->middleware('auth');
 
-Route::resource('event_one', EventOneController::class)->middleware('auth');
+Route::resource('event_one', EventOneController::class);
 Route::get('/confirmation-event/{uuid}/confirm', [EventOneController::class, 'confirmation'])->name('confirmation_event');
 
 
