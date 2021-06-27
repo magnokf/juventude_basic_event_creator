@@ -26,11 +26,9 @@ class FormOneRequest extends FormRequest
         return $this->rules =[
             'name' => 'required',
             'date_of_birth'=> 'required|date',
-//            'email' => "required|string|email|max:191|unique:event_ones,NULL,$this->uuid,uuid",
-            'email'=> "required|unique:event_ones,email,NULL,$this->uuid,uuid,1",
-            'phone'=> "required|string|max:30|unique:event_ones,phone,NULL,$this->uuid,uuid,1",
-            'ip_address' => 'nullable',
-
+            'email' => "required|string|email|max:191|unique:event_ones,NULL,$this->uuid,uuid",
+            'phone'=> "required|string|max:30|unique:event_ones,NULL,$this->uuid,uuid",
+            'ip_address' => 'nullable'
         ];
 
         return $this->rules;
