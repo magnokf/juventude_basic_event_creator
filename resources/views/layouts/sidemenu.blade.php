@@ -3,7 +3,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
-            <a href="{{route('home')}}" class="nav-link active">
+            <a href="{{route('home')}}" class="nav-link {{request()->route()->named('home') ? 'active' : ''}} ">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                     Dashboard - Home
@@ -28,7 +28,7 @@
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link {{request()->route()->named('event_one*') ? 'active' : ''}} {{request()->route()->named('not_confirmed') ? 'active' : ''}} ">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                     Inscrições
@@ -38,7 +38,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('event_one.index')}}" class="nav-link">
+                    <a href="{{route('event_one.index')}}" class="nav-link {{request()->route()->named('event_one.index') ? 'active' : ''}} {{request()->route()->named('event_one.index') ? 'active' : ''}} ">
                         <i class="far fa-circle nav-icon text-success"></i>
                         <p>Confirmadas
                             <span class="badge badge-success right">{{$total_confirmed_enrollments}}</span>
@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('not_confirmed')}}" class="nav-link {{request()->route()->named('not_confirmed') ? 'active' : ''}}">
                         <i class="far fa-circle nav-icon text-danger"></i>
                         <p>Não Confirmadas
                             <span class="badge badge-danger right">{{$total_not_confirmed_enrollments}}</span>

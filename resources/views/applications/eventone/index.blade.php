@@ -50,7 +50,22 @@
                                     </td>
                                     <td>{{$i->email}}</td>
                                     <td>{{$i->date_of_birth}}</td>
-                                    <td>{{$i->email_verified_at}}</td>
+                                    <td>{{$i->email_verified_at}}
+                                        <form action="{{ route('event_one.destroy', $i->uuid)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <a class="btn btn-sm btn-warning mt-2" href="{{route('event_one.edit', $i->uuid)}}">
+                                                <i class="fa fa-pencil-alt"></i> Editar
+                                            </a>
+
+                                            <button class="btn btn-sm btn-danger mt-2" type="submit" onclick="return confirm('Deseja Excluir DEFINITIVAMENTE? IMPOSSÍVEL ser recuperada');">
+                                                <i class="fa fa-trash-alt"></i>
+                                                Excluir
+                                            </button>
+
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>

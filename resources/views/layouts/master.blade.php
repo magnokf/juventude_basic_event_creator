@@ -18,6 +18,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('vendor/dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/adminlte/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -131,6 +132,8 @@
 <!-- AdminLTE App -->
 
 <script src="{{asset('vendor/adminlte/dist/js/adminlte.min.js')}}"></script>
+<script src="{{asset('vendor/toastr/toastr.min.js')}}"></script>
+{!! Toastr::message() !!}
 
 <!-- Page specific script -->
 @stack('js')
