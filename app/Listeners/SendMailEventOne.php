@@ -4,11 +4,15 @@ namespace App\Listeners;
 
 use App\Events\EventOneCreated;
 use App\Notifications\GoSendEmail;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class SendMailEventOne implements ShouldQueue
 {
+
+
 
     public $queue = 'listeners';
 

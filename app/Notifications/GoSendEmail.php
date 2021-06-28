@@ -42,4 +42,16 @@ class GoSendEmail extends Notification
                     ->line('Estaremos aguardando você lá!');
     }
 
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toArray($notifiable)
+    {
+        return [
+
+        ];
+    }
 }
