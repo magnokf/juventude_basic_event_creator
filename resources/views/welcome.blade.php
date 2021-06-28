@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col mb-4 mt-4 text-center">
                                 @if($total_confirmed_enrollments < 100)
-                                    <i class="far fa-hand-point-right"></i> <a href="{{route('event_one.create')}}">Inscrições Abertas para o evento do dia 03/07/2021</a><br>
+                                    <i class="far fa-hand-point-right"></i> <a href="{{url('/eventone')}}">Inscrições Abertas para o evento do dia 03/07/2021</a><br>
 
                                 @endif
 
