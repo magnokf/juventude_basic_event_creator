@@ -19,7 +19,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="{{url('/')}}">
+            <img class="img-fluid rounded " src="{{asset('images/folder1.jpeg')}}" alt="">
+        </a>
+
+        <a style="text-decoration: none" href="{{ url('/') }}"><b>{{ config('app.name') }}</b></a>
         <span class="badge badge-light">Área de Admnistração</span>
     </div>
     <!-- /.login-logo -->
