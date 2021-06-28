@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes([
     'verify' => true,
-    'register'=>true
+    'register'=>false
 ]);
 
 Route::get('/', function () {
