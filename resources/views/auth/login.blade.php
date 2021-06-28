@@ -7,6 +7,8 @@
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{asset('images/favico.png')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
@@ -24,7 +26,7 @@
         </a>
 
         <a style="text-decoration: none" href="{{ url('/') }}"><b>{{ config('app.name') }}</b></a>
-        <span class="badge badge-light">Área de Admnistração</span>
+        <span class="badge badge-light" style="background-color: #E9ECEF"> <i class="fas fa-user-lock"></i> Acesso Restrito</span>
     </div>
     <!-- /.login-logo -->
 

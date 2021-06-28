@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\EventOneCreated;
 use App\Http\Requests\FormOneRequest;
+use App\Jobs\ProcessEventOneEmail;
 use App\Models\EventOne;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

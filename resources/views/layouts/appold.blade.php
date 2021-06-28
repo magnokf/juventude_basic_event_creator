@@ -10,7 +10,7 @@
 
     <title>{{ config('app.name') }}</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="{{asset('images/favico.png')}}">
 
 
     <!-- Scripts -->

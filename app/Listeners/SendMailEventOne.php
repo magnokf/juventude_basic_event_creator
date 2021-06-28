@@ -7,9 +7,10 @@ use App\Notifications\GoSendEmail;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class SendMailEventOne
+class SendMailEventOne implements ShouldQueue
 {
 
+    public $queue = 'listeners';
 
     /**
      * Handle the event.
@@ -19,8 +20,7 @@ class SendMailEventOne
      */
     public function handle($event)
     {
-
-        $event->enrollment->notify(new GoSendEmail($event->enrollment));
+         $event->getEnrollment()->notify(new GoSendEmail);
 
     }
 }

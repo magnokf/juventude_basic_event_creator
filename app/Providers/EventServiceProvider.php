@@ -23,7 +23,8 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         EventOneCreated::class => [
-            SendMailEventOne::class
+            SendMailEventOne::class,
+
         ]
     ];
 

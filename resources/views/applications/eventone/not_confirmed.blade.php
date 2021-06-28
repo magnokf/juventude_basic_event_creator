@@ -56,7 +56,7 @@
                                         @csrf
                                         @method('DELETE')
 
-                                        <a onclick="return alert('Deseja que essa inscrição seja CONFIRMADA MANUALMENTE?' +
+                                        <a onclick="return confirm('Deseja que essa inscrição seja CONFIRMADA MANUALMENTE?' +
                                          'Lembrando que não será possivel enviar e-mail de confirmação.')" class="btn btn-sm btn-primary mt-2" href="{{route('manual_confirmed', $i->uuid)}}">Confirmar Manualmente</a>
 
 

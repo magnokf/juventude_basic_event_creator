@@ -4,6 +4,8 @@
     <meta name="theme-color" content="#06BBF0">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{asset('images/favico.png')}}">
     <title>{{config('app.name')}}</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -16,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('vendor/datatables-plugins/responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables-plugins/buttons/css/buttons.bootstrap4.min.css')}}">
     <!-- Theme style -->
+    <link rel="stylesheet" href="{{asset('vendor/adminlte/dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/adminlte/dist/css/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
@@ -47,7 +50,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="" class="brand-link">
-            <img src="{{asset('images/folder1.jpeg')}}" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="{{asset('images/folder1.jpeg')}}" alt="" class="brand-image img-rounded">
             <br>
         </a>
 

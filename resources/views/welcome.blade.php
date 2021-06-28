@@ -11,7 +11,7 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url(asset('images/folder1.jpeg'))}}">
+    <link rel="shortcut icon" href="{{asset('images/favico.png')}}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -66,15 +66,21 @@
                             @endauth
                         </div>
                         <div class="row">
-                            <div class="col mb-4 mt-4 text-center">
+                            <div class="col mb-5 mt-5 text-center">
                                 @if($total_confirmed_enrollments < 100)
-                                    <i class="far fa-hand-point-right"></i> <a href="{{url('/eventone')}}">Inscrições Abertas para o evento do dia 03/07/2021</a><br>
+                                <i class="far fa-hand-point-right"></i>
+                                    <a class="p-2" href="{{url('/eventone')}}">Inscrições Abertas para o evento do dia 03/07/2021</a>
+                                <i class="far fa-hand-point-left"></i>
+                                    <br>
 
                                 @endif
 
                                     @if($total_confirmed_enrollments > 10)
-                                        <i class="far fa-hand-point-right"></i><span class="text-center justify-content-center"> Já temos {{$total_confirmed_enrollments}}
+                                        <div class="m-3">
+                                            <i class="far fa-thumbs-up"></i><span class=" p-3 text-center justify-content-center"> Já temos {{$total_confirmed_enrollments}}
                                          Inscrições Confirmadas.</span>
+                                        </div>
+
                                     @endif
 
                                             @if($total_confirmed_enrollments == 100)

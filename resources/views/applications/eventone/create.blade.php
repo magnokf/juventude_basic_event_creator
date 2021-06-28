@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-lg-4">
-                    <img class="img-fluid" src="{{asset('images/folder1.jpeg')}}" alt="">
+                    <a href="{{route('principal')}}"><img class="img-fluid" src="{{asset('images/folder1.jpeg')}}" alt="Voltar a Página Principal"></a>
                 </div>
                 <div class="col-12 col-lg-8">
                     <label class="">Nome:</label>
@@ -76,7 +76,7 @@
                     @enderror
                     <br>
                     <input type="submit" value="Salvar" class="btn btn-success px-5 mr-5">
-                    <input type="reset" value="Limpar" class="btn btn-danger">
+                    <input type="reset" onclick="window.location.href=window.location.href" value="Limpar" class="btn btn-danger">
 
                 </div>
 

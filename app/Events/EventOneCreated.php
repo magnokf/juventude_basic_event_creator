@@ -15,7 +15,7 @@ class EventOneCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $enrollment;
+    private $enrollment;
 
     /**
      * Create a new event instance.
@@ -26,6 +26,15 @@ class EventOneCreated
     {
         $this->enrollment  =$enrollment;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEnrollment()
+    {
+        return $this->enrollment;
+    }
+
 
 
 }
