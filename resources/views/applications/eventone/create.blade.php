@@ -54,7 +54,7 @@
                     @enderror
                     <input type="hidden" name="ip_address" value="{{$_SERVER['REMOTE_ADDR']}}">
                     <label for="">Telefone para Contato:</label>
-                    <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror" value="{{old('phone') ?? ''}}">
+                    <input type="text" name="phone" id="phone" class="phone_number_2 form-control @error('phone') is-invalid @enderror" value="{{old('phone') ?? ''}}">
                     @error('phone')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -85,3 +85,14 @@
         </form>
     </div>
 @endsection
+@push('scripts')
+    <script src="{{asset('vendor/inputmask/jquery.inputmask.min.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.phone_number').inputmask('(999)-999-9999');
+            $('.phone_number_2').inputmask('(99)-9999-9999');
+            $('.phone_number_3').inputmask('+99-9999999999');
+        });
+    </script>
+@endpush
+

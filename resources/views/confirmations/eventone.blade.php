@@ -41,5 +41,13 @@
                 <a href="{{route('principal')}}">Voltar a juventude.app.br</a>
             </div>
         </div>
+        <div class="row">
+            <div class="col text-center mt-3">
+                <a href="{{route('principal')}}">
+                    <img src="{{asset('images/thumb up_.png')}}" width="220" alt="">
+                </a>
+
+            </div>
+        </div>
     </div>
 @endsection
