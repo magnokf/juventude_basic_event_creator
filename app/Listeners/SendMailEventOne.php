@@ -13,10 +13,6 @@ class SendMailEventOne implements ShouldQueue
 {
 
 
-
-
-    public $queue = 'listeners';
-
     /**
      * Handle the event.
      *

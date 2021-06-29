@@ -135,9 +135,19 @@ class EventOneController extends Controller
 
             toastr()->success("Inscrição confirmada manualmente com sucesso!.",
                 'Atenção - O registro de verificação foi definido manualmente',
-                ['closeButton'=>true,
+                [   'closeButton'=>true,
                     'positionClass'=>'toast-top-right',
-                    'timeOut'=>'4000'
+                    'timeOut'=>'4000',
+                    'progressBar'=> true,
+                    'preventDuplicates'=>true,
+                    'onclick'=>null,
+                    'showDuration'=>'3000',
+                    'hideDuration'=>'2000',
+                    "extendedTimeOut"=> "5000",
+                    "showEasing"=> "swing",
+                    "hideEasing"=> "linear",
+                    "showMethod"=> "fadeIn",
+                    "hideMethod"=> "fadeOut"
                 ]);
 
             return redirect()->back();
@@ -210,7 +220,17 @@ class EventOneController extends Controller
                     'Atenção - As Informações sobre a Inscrição foram Modificadas!!!!',
                     ['closeButton'=>true,
                         'positionClass'=>'toast-top-right',
-                        'timeOut'=>'4000'
+                        'timeOut'=>'4000',
+                        'progressBar'=> true,
+                        'preventDuplicates'=>true,
+                        'onclick'=>null,
+                        'showDuration'=>'3000',
+                        'hideDuration'=>'2000',
+                        "extendedTimeOut"=> "5000",
+                        "showEasing"=> "swing",
+                        "hideEasing"=> "linear",
+                        "showMethod"=> "fadeIn",
+                        "hideMethod"=> "fadeOut"
                     ]);
             }
 
@@ -220,7 +240,17 @@ class EventOneController extends Controller
                     'Atenção - Não houve Modificações!!!!',
                     ['closeButton'=>true,
                         'positionClass'=>'toast-top-right',
-                        'timeOut'=>'4000'
+                        'timeOut'=>'4000',
+                        'progressBar'=> true,
+                        'preventDuplicates'=>true,
+                        'onclick'=>null,
+                        'showDuration'=>'3000',
+                        'hideDuration'=>'2000',
+                        "extendedTimeOut"=> "5000",
+                        "showEasing"=> "swing",
+                        "hideEasing"=> "linear",
+                        "showMethod"=> "fadeIn",
+                        "hideMethod"=> "fadeOut"
                     ]);
 
 
@@ -249,7 +279,17 @@ class EventOneController extends Controller
                 'Atenção - Registro foi destruído!!!!',
                 ['closeButton'=>true,
                     'positionClass'=>'toast-top-right',
-                    'timeOut'=>'4000'
+                    'timeOut'=>'4000',
+                    'progressBar'=> true,
+                    'preventDuplicates'=>true,
+                    'onclick'=>null,
+                    'showDuration'=>'3000',
+                    'hideDuration'=>'2000',
+                    "extendedTimeOut"=> "5000",
+                    "showEasing"=> "swing",
+                    "hideEasing"=> "linear",
+                    "showMethod"=> "fadeIn",
+                    "hideMethod"=> "fadeOut"
                 ]);
             return redirect()->back();
         }
