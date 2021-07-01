@@ -22,7 +22,14 @@ class EventOneFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'phone'=>$this->faker->unique()->phoneNumber,
+            'date_of_birth'=> $this->faker->date('Y-m-d', '2003-12-31'),
+            'ip_address'=> $this->faker->ipv4,
+
+
         ];
     }
 }

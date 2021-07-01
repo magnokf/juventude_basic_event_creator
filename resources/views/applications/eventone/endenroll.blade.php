@@ -39,12 +39,12 @@
             <div class=" col-12 col-md-7" style="margin-top: 2%">
                 <div class="box">
                     <a href="{{route('principal')}}"><img class="img-fluid" src="{{asset('images/folder1.jpeg')}}" alt=""></a>
-                    <h3 class="box-title">Incrições estão encerradas!!</h3>
+                    <h3 class="box-title">As Incrições estão encerradas!!</h3>
 
                     <div class="box-body">
 
-                        <p>Aguarde pelo próximo evento!!! <b>"Obrigado pela compreensão".</b></p>
-                        <a href="{{route('principal')}}">Voltar para a página principal</a>
+                        <p>Aguarde pelo próximo evento e <b>obrigado pela sua compreensão.</b></p>
+                        <i class="far fa-hand-point-right mr-2"></i>  <a href="{{route('principal')}}">Voltar para a página principal</a>
                     </div>
                 </div>
             </div>

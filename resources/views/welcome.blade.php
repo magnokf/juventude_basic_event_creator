@@ -74,6 +74,13 @@
                                     <br>
 
                                 @endif
+                                    @if($total_confirmed_enrollments >= 100)
+
+                                        <span class="text-center text-red justify-content-center">
+                                                              <h4> <i class=" text-red far fa-hand-point-right"></i> Inscrições estão ENCERRADAS!!!</h4>
+                                                                <subtille>Aguarde o próximo evento.</subtille>
+                                                            </span>
+                                    @endif
 
                                     @if($total_confirmed_enrollments > 10)
                                         <div class="m-3">
@@ -83,12 +90,7 @@
 
                                     @endif
 
-                                            @if($total_confirmed_enrollments == 100)
-                                                 <br>   <i class=" text-red far fa-hand-point-right"></i>
-                                                            <span class="text-center text-red justify-content-center">
-                                                                Inscrições estão ENCERRADAS!!!
-                                                            </span>
-                                            @endif
+
 
 
 
