@@ -81,6 +81,15 @@
                                                                 <subtille>Aguarde o próximo evento.</subtille>
                                                             </span>
                                     @endif
+                                    @if($total_confirmed_enrollments > 95 && $total_confirmed_enrollments <= 99 )
+
+                                        <span class="text-center text-white justify-content-center m-2">
+                                                            <a class="text-white" href="{{url('/eventone')}}"> <h4> <i class=" text-white far fa-hand-point-right"></i>  Últimas Vagas!!!</h4>
+                                            <subtitle>Só temos 100 vagas.</subtitle>
+                                                            </a>
+
+                                                            </span>
+                                    @endif
 
                                     @if($total_confirmed_enrollments > 10)
                                         <div class="m-3">

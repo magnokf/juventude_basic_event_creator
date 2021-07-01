@@ -17,7 +17,7 @@ class EventOneSeeder extends Seeder
     public function run()
     {
         EventOne::factory()
-            ->count(88)
+            ->count(1)
             ->create();
 
 
