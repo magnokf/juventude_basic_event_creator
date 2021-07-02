@@ -8,6 +8,7 @@ use App\Models\EventOne;
 use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AgesChart extends BaseChart
 {
@@ -54,22 +55,22 @@ class AgesChart extends BaseChart
 
 
 
-        $count_minors = EventOne::all()
-            ->whereBetween('date_of_birth', [$mount_18, $today_date])
+        $count_minors = DB::table('event_ones')
+            ->where('date_of_birth', '>=', $mount_18)
             ->count();
 
-        $count_18_25 = EventOne::all()
+        $count_18_25 = DB::table('event_ones')
             ->whereBetween('date_of_birth', [$mount_25, $mount_18])
             ->count();
 
-        $count_25_40 = EventOne::all()
+        $count_25_40 = DB::table('event_ones')
             ->whereBetween('date_of_birth', [$mount_40, $mount_25])
             ->count();
-        $count_40_50 = EventOne::all()
+        $count_40_50 = DB::table('event_ones')
             ->whereBetween('date_of_birth', [$mount_50, $mount_40])
             ->count();
-        $count_over_50 = EventOne::all()
-            ->where('date_of_birth', '<', $mount_50)
+        $count_over_50 = DB::table('event_ones')
+            ->where('date_of_birth', '<=', $mount_50)
             ->count();
 
         return Chartisan::build()

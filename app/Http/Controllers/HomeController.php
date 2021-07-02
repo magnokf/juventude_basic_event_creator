@@ -34,6 +34,8 @@ class HomeController extends Controller
             ->where('email_verified_at','=',null )
             ->count();
 
+
+
        //logica das idades
 
         $year = date('Y');
