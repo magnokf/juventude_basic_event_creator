@@ -41,42 +41,51 @@ class HomeController extends Controller
         $month = date('m');
         $day = date('d');
 
-        $year_minors = date('Y') - 18;
-        $year_18_25 = $year - 25;
-        $year_25_40 = $year - 40;
+
+        $year_18 = $year - 18;
+        $year_25 = $year - 25;
+        $year_40 = $year - 40;
+        $year_50 = $year - 50;
 
 
 
 
         //montar a data de nascimento para os menores de 18 anos de idade
 
-        $mount_date_minors = $year_minors.'-'.$month.'-'.$day;
+        $mount_18 = $year_18.'-'.$month.'-'.$day;
 
         //montar a data de nascimento para os de 18 a 25 anos de idade
 
-        $mount_18_25 = $year_18_25.'-'.$month.'-'.$day;
+        $mount_25 = $year_25.'-'.$month.'-'.$day;
 
         //montar a data de nascimento para os de 25 a 40 anos de idade
 
-        $mount_25_40 = $year_25_40.'-'.$month.'-'.$day;
+        $mount_40 = $year_40.'-'.$month.'-'.$day;
+
+        //montar a data de nascimento para os de 25 a 40 anos de idade
+
+        $mount_50 = $year_50.'-'.$month.'-'.$day;
 
 
 
-//        dd($mount_18_25);
+
 
         $count_minors = EventOne::all()
-            ->whereBetween('date_of_birth', [$mount_date_minors, $today_date])
+            ->whereBetween('date_of_birth', [$mount_18, $today_date])
             ->count();
 
         $count_18_25 = EventOne::all()
-            ->whereBetween('date_of_birth', [$mount_18_25, $today_date])
+            ->whereBetween('date_of_birth', [$mount_25, $mount_18])
             ->count();
 
         $count_25_40 = EventOne::all()
-            ->whereBetween('date_of_birth', [$mount_25_40, $today_date])
+            ->whereBetween('date_of_birth', [$mount_40, $mount_25])
             ->count();
-        $count_over_40 = EventOne::all()
-            ->where('date_of_birth', '<', $mount_25_40)
+        $count_40_50 = EventOne::all()
+            ->whereBetween('date_of_birth', [$mount_50, $mount_40])
+            ->count();
+        $count_over_50 = EventOne::all()
+            ->where('date_of_birth', '<', $mount_50)
             ->count();
 
 
