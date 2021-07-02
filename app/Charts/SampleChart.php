@@ -1,40 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+declare(strict_types = 1);
+
+namespace App\Charts;
 
 use App\Models\EventOne;
-use http\Client\Curl\User;
+use Chartisan\PHP\Chartisan;
+use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class SampleChart extends BaseChart
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * Handles the HTTP request for the given chart.
+     * It must always return an instance of Chartisan
+     * and never a string or an array.
      */
-    public function index()
+    public function handler(Request $request): Chartisan
     {
-        $total_enrollments = EventOne::all()
-            ->count();
-        $total_confirmed_enrollments = EventOne::all()
-            ->where('email_verified_at','!=',null )
-            ->count();
-        $total_not_confirmed_enrollments = EventOne::all()
-            ->where('email_verified_at','=',null )
-            ->count();
-
-       //logica das idades
+        //logica das idades
 
         $year = date('Y');
         $today_date = date('Y-m-d');
@@ -78,16 +63,9 @@ class HomeController extends Controller
         $count_over_40 = EventOne::all()
             ->where('date_of_birth', '<', $mount_25_40)
             ->count();
+        return Chartisan::build()
+            ->labels(['Menores de 18 anos', 'Entre 18 e 25 anos', 'Entre 25 a 40 anos', 'Maiores de 40 anos'])
+            ->dataset('Inscritos',  [$count_minors, $count_18_25, $count_25_40, $count_over_40]);
 
-
-
-
-
-        return view('home', [
-            'total_enrollments' => $total_enrollments,
-            'total_confirmed_enrollments'=>$total_confirmed_enrollments,
-            'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments,
-
-        ]);
     }
 }
