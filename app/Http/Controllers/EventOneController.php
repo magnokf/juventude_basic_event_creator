@@ -88,6 +88,31 @@ class EventOneController extends Controller
      */
     public function create()
     {
+        $deadline = 2021-07-03;
+        $today = date('Y-m-d');
+
+            if ($today >= $deadline)
+            {
+                toastr()->error("Incrições ENCERRADAS.",
+                    "Atenção - O Limite máximo para a inscrição é $deadline",
+                    [   'closeButton'=>true,
+                        'positionClass'=>'toast-top-right',
+                        'timeOut'=>'4000',
+                        'progressBar'=> true,
+                        'preventDuplicates'=>true,
+                        'onclick'=>null,
+                        'showDuration'=>'3000',
+                        'hideDuration'=>'2000',
+                        "extendedTimeOut"=> "5000",
+                        "showEasing"=> "swing",
+                        "hideEasing"=> "linear",
+                        "showMethod"=> "fadeIn",
+                        "hideMethod"=> "fadeOut"
+                    ]);
+
+                return view('applications.eventone.endenroll');
+            }
+
         $total_enrollments = EventOne::all()
             ->where('email_verified_at', '!=', null)
             ->count();
@@ -106,6 +131,30 @@ class EventOneController extends Controller
      */
     public function store(FormOneRequest $request)
     {
+        $deadline = 2021-07-03;
+        $today = date('Y-m-d');
+
+        if ($today >= $deadline)
+        {
+            toastr()->error("Incrições ENCERRADAS.",
+                "Atenção - O Limite máximo para a inscrição é $deadline",
+                [   'closeButton'=>true,
+                    'positionClass'=>'toast-top-right',
+                    'timeOut'=>'4000',
+                    'progressBar'=> true,
+                    'preventDuplicates'=>true,
+                    'onclick'=>null,
+                    'showDuration'=>'3000',
+                    'hideDuration'=>'2000',
+                    "extendedTimeOut"=> "5000",
+                    "showEasing"=> "swing",
+                    "hideEasing"=> "linear",
+                    "showMethod"=> "fadeIn",
+                    "hideMethod"=> "fadeOut"
+                ]);
+
+            return redirect()->back();
+        }
         $enrollment = EventOne::create($request->validated());
 
         event(new EventOneCreated($enrollment));

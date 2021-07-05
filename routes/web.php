@@ -31,11 +31,15 @@ Route::get('/', function () {
     $total_not_confirmed_enrollments = EventOne::all()
         ->where('email_verified_at','=',null )
         ->count();
+    $today_date = date('Y-m-d');
+    $deadline = 2021-07-03;
 
     return view('welcome', [
         'total_enrollments' => $total_enrollments,
         'total_confirmed_enrollments'=>$total_confirmed_enrollments,
         'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments,
+        'today' => $today_date,
+        'deadline'=>$deadline
     ]);
 
 })->name('principal');

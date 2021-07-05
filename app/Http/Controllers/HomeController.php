@@ -40,6 +40,7 @@ class HomeController extends Controller
 
         $year = date('Y');
         $today_date = date('Y-m-d');
+        $deadline = 2021-07-03;
         $month = date('m');
         $day = date('d');
 
@@ -97,7 +98,8 @@ class HomeController extends Controller
         return view('home', [
             'total_enrollments' => $total_enrollments,
             'total_confirmed_enrollments'=>$total_confirmed_enrollments,
-            'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments,
+            'total_not_confirmed_enrollments'=>$total_not_confirmed_enrollments
+
 
         ]);
     }
