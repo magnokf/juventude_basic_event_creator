@@ -88,7 +88,7 @@ class EventOneController extends Controller
      */
     public function create()
     {
-        $deadline = 2021-07-03;
+        $deadline = 2022-07-31;
         $today = date('Y-m-d');
 
             if ($today >= $deadline)
@@ -116,7 +116,7 @@ class EventOneController extends Controller
         $total_enrollments = EventOne::all()
             ->where('email_verified_at', '!=', null)
             ->count();
-        if ($total_enrollments < 100)
+        if ($total_enrollments < 200)
 
             return view('applications.eventone.create');
         else
@@ -131,13 +131,13 @@ class EventOneController extends Controller
      */
     public function store(FormOneRequest $request)
     {
-        $deadline = 2021-07-03;
+        $deadline = 2022-07-31;
         $today = date('Y-m-d');
 
         if ($today >= $deadline)
         {
             toastr()->error("Incrições ENCERRADAS.",
-                "Atenção - O Limite máximo para a inscrição é $deadline",
+                "Atenção - O Limite para a inscrição é $deadline até as 16hs",
                 [   'closeButton'=>true,
                     'positionClass'=>'toast-top-right',
                     'timeOut'=>'4000',

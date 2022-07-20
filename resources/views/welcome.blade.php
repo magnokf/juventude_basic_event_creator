@@ -67,30 +67,30 @@
                         </div>
                         <div class="row">
                             <div class="col mb-5 mt-5 text-center">
-                                @if($today <= $deadline)
-                                    @if($total_confirmed_enrollments < 100)
+                                @if($today_date <= $deadline)
+                                    @if($total_confirmed_enrollments < 500)
                                         <i class="far fa-hand-point-right"></i>
-                                        <a class="p-2" href="{{url('/eventone')}}">Inscrições Abertas para o evento do dia 03/07/2021</a>
+                                        <a class="p-2" href="{{url('/eventone')}}">Inscrições Abertas para o evento do dia 31/07/2022</a>
                                         <i class="far fa-hand-point-left"></i>
                                         <br>
 
                                     @endif
-                                    @if($total_confirmed_enrollments >= 100)
+{{--                                    @if($total_confirmed_enrollments >= 100)--}}
 
-                                        <span class="text-center text-red justify-content-center">
-                                                              <h4> <i class=" text-red far fa-hand-point-right"></i> Inscrições estão ENCERRADAS!!!</h4>
-                                                                <subtille>Aguarde o próximo evento.</subtille>
-                                                            </span>
-                                    @endif
-                                    @if($total_confirmed_enrollments > 95 && $total_confirmed_enrollments <= 99 )
+{{--                                        <span class="text-center text-red justify-content-center">--}}
+{{--                                                              <h4> <i class=" text-red far fa-hand-point-right"></i> Inscrições estão ENCERRADAS!!!</h4>--}}
+{{--                                                                <subtille>Aguarde o próximo evento.</subtille>--}}
+{{--                                                            </span>--}}
+{{--                                    @endif--}}
+{{--                                    @if($total_confirmed_enrollments > 95 && $total_confirmed_enrollments <= 99 )--}}
 
-                                        <span class="text-center text-white justify-content-center m-2">
-                                                            <a class="text-white" href="{{url('/eventone')}}"> <h4> <i class=" text-white far fa-hand-point-right"></i>  Últimas Vagas!!!</h4>
-                                            <subtitle>Só temos 100 vagas.</subtitle>
-                                                            </a>
+{{--                                        <span class="text-center text-white justify-content-center m-2">--}}
+{{--                                                            <a class="text-white" href="{{url('/eventone')}}"> <h4> <i class=" text-white far fa-hand-point-right"></i>  Últimas Vagas!!!</h4>--}}
+{{--                                            <subtitle>Só temos 100 vagas.</subtitle>--}}
+{{--                                                            </a>--}}
 
-                                                            </span>
-                                    @endif
+{{--                                                            </span>--}}
+{{--                                    @endif--}}
 
                                     @if($total_confirmed_enrollments > 10)
                                         <div class="m-3">
@@ -101,8 +101,8 @@
                                     @endif
                                 @else
                                     <div class="m-3">
-                                        <i class="far fa-thumbs-up"></i><span class=" p-3 text-center justify-content-center">
-                                         Inscrições estão Encerradas.</span>
+                                        <i class="fa fa-ban"></i><span class=" p-1 text-center justify-content-center">
+                                         As Inscrições estão Encerradas.</span>
                                     </div>
                                 @endif
 

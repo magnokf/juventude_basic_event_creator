@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         $year = date('Y');
         $today_date = date('Y-m-d');
-        $deadline = 2021-07-03;
+        $deadline = 2022-07-31;
         $month = date('m');
         $day = date('d');
 
