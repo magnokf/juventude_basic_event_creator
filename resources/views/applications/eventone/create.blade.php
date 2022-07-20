@@ -86,14 +86,14 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     {!! Toastr::message() !!}
     <script src="{{asset('vendor/inputmask/jquery.inputmask.min.js')}}"></script>
     <script>
         $(document).ready(function(){
             $('.phone_number').inputmask('(999)-999-9999');
-            $('.phone_number_2').inputmask('(99)-9999-9999');
+            $('.phone_number_2').inputmask('(99)-99999-9999');
             $('.phone_number_3').inputmask('+99-9999999999');
         });
     </script>

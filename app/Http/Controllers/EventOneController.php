@@ -88,8 +88,9 @@ class EventOneController extends Controller
      */
     public function create()
     {
-        $deadline = 2022-07-31;
-        $today = date('Y-m-d');
+        //get today date
+        $deadline = date('Y-m-d', strtotime('2022-07-31'));
+        $today = date('Y-m-d', strtotime('now'));
 
             if ($today >= $deadline)
             {
@@ -110,7 +111,8 @@ class EventOneController extends Controller
                         "hideMethod"=> "fadeOut"
                     ]);
 
-                return view('applications.eventone.endenroll');
+//                return view('applications.eventone.endenroll');
+                return view('applications.eventone.create');
             }
 
         $total_enrollments = EventOne::all()
@@ -131,8 +133,9 @@ class EventOneController extends Controller
      */
     public function store(FormOneRequest $request)
     {
-        $deadline = 2022-07-31;
-        $today = date('Y-m-d');
+
+        $deadline = date('Y-m-d', strtotime('2022-07-31'));
+        $today = date('Y-m-d', strtotime('now'));
 
         if ($today >= $deadline)
         {
