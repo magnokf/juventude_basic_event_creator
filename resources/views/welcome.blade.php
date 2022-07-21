@@ -69,9 +69,12 @@
                             <div class="col mb-5 mt-5 text-center">
                                 @if($today_date <= $deadline)
                                     @if($total_confirmed_enrollments < 500)
-                                        <i class="far fa-hand-point-right"></i>
-                                        <a class="p-2" href="{{url('/eventone')}}">Inscrições Abertas para o evento do dia 31/07/2022</a>
-                                        <i class="far fa-hand-point-left"></i>
+                                        <i class="far fa-hand-point-down"></i>
+                                    <p>
+                                        <a class="p-2" href="{{url('/eventone')}}">Inscrições Abertas para o evento do Dia 30/07/2022 (Sábado) – Início as 18:00 hs</a>
+                                    </p>
+
+                                        <i class="far fa-hand-point-up"></i>
                                         <br>
 
                                     @endif
