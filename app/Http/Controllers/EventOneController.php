@@ -32,8 +32,14 @@ class EventOneController extends Controller
             $total_not_confirmed_enrollments = EventOne::all()
                 ->where('email_verified_at','=',null )
                 ->count();
-            $inscritos = EventOne::all()
-                ->where('email_verified_at','!=', null);
+            $inscritos = EventOne::where('email_verified_at','!=', null)->get()->map(function ($item) {
+                $dateOfbirth = date('d-m-Y', strtotime($item->date_of_birth));
+                $today = date('d-m-Y',strtotime(now()));
+                $age = date_diff(date_create($dateOfbirth), date_create($today))->y;
+                $item->idade = $age;
+                return $item;
+            });
+
 
 
             return view('applications.eventone.index', [

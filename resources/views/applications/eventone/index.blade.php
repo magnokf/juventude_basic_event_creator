@@ -39,6 +39,7 @@
                                     <th>Telefone</th>
                                     <th>E-mail</th>
                                     <th>Data de Nascimento</th>
+                                    <th>Idade (anos)</th>
                                     <th>Confirmada em:</th>
                                 </tr>
                                 </thead>
@@ -49,7 +50,8 @@
                                     <td>{{$i->phone}}
                                     </td>
                                     <td>{{$i->email}}</td>
-                                    <td>{{$i->date_of_birth}}</td>
+                                    <td>{{date('d-m-Y', strtotime($i->date_of_birth))}}</td>
+                                    <td>{{$i->idade}}</td>
                                     <td>{{$i->email_verified_at}}
                                         <form action="{{ route('event_one.destroy', $i->uuid)}}" method="POST">
                                             @csrf
