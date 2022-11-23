@@ -50,6 +50,7 @@ Route::get('/eventone', [EventOneController::class, 'create'])->name('inscricao'
 Route::get('/not_confirmed', [EventOneController::class, 'not_confirmed'])->name('not_confirmed');
 Route::get('/manual_confirmed/{uuid}', [EventOneController::class, 'manual_confirmed'])->name('manual_confirmed');
 Route::get('/ageschart', [EventOneController::class, 'ageschart'])->name('event_one_ages_chart');
+Route::delete('/destroyAll', [EventOneController::class, 'destroyAll'])->name('destroyAll');
 
 Route::resource('event_one', EventOneController::class);
 Route::get('/confirmation-event/{uuid}/confirm', [EventOneController::class, 'confirmation'])->name('confirmation_event');

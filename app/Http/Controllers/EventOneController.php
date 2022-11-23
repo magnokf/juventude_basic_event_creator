@@ -9,6 +9,7 @@ use App\Models\EventOne;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class EventOneController extends Controller
@@ -32,8 +33,15 @@ class EventOneController extends Controller
             $total_not_confirmed_enrollments = EventOne::all()
                 ->where('email_verified_at','=',null )
                 ->count();
-            $inscritos = EventOne::all()
-                ->where('email_verified_at','!=', null);
+            $inscritos = EventOne::where('email_verified_at','!=', null)
+                ->get()->map(function ($item) {
+                $dateOfbirth = date('d-m-Y', strtotime($item->date_of_birth));
+                $today = date('d-m-Y',strtotime(now()));
+                $age = date_diff(date_create($dateOfbirth), date_create($today))->y;
+                $item->idade = $age;
+                return $item;
+            });
+
 
 
             return view('applications.eventone.index', [
@@ -88,8 +96,9 @@ class EventOneController extends Controller
      */
     public function create()
     {
-        $deadline = 2022-07-31;
-        $today = date('Y-m-d');
+        //get today date
+        $deadline = date('Y-m-d', strtotime('2022-07-31'));
+        $today = date('Y-m-d', strtotime('now'));
 
             if ($today >= $deadline)
             {
@@ -110,7 +119,8 @@ class EventOneController extends Controller
                         "hideMethod"=> "fadeOut"
                     ]);
 
-                return view('applications.eventone.endenroll');
+//                return view('applications.eventone.endenroll');
+                return view('applications.eventone.create');
             }
 
         $total_enrollments = EventOne::all()
@@ -131,8 +141,9 @@ class EventOneController extends Controller
      */
     public function store(FormOneRequest $request)
     {
-        $deadline = 2022-07-31;
-        $today = date('Y-m-d');
+
+        $deadline = date('Y-m-d', strtotime('2022-07-31'));
+        $today = date('Y-m-d', strtotime('now'));
 
         if ($today >= $deadline)
         {
@@ -344,6 +355,31 @@ class EventOneController extends Controller
         }
 
 
+    }
+
+    public function destroyAll()
+    {
+        if (Auth::check()) {
+            // The user is logged in...
+            DB::table('event_ones')->truncate();
+            toastr()->error("Todas as Inscrições foram DESTRUÍDAS!.",
+                'Atenção - Todos os Registros foram destruídos!!!!',
+                ['closeButton' => true,
+                    'positionClass' => 'toast-top-right',
+                    'timeOut' => '4000',
+                    'progressBar' => true,
+                    'preventDuplicates' => true,
+                    'onclick' => null,
+                    'showDuration' => '3000',
+                    'hideDuration' => '2000',
+                    "extendedTimeOut" => "5000",
+                    "showEasing" => "swing",
+                    "hideEasing" => "linear",
+                    "showMethod" => "fadeIn",
+                    "hideMethod" => "fadeOut"
+                ]);
+            return redirect()->back();
+        }
     }
 
     public function ageschart()
