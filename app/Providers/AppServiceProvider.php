@@ -6,7 +6,7 @@ use App\Charts\AgesChart;
 use App\Charts\SampleChart;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use ConsoleTVs\Charts\Registrar as Charts;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,13 +25,13 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Charts $charts)
+    public function boot()
     {
         Schema::defaultStringLength(191);
-        $charts->register([
-            AgesChart::class,
-            SampleChart::class
-        ]);
+//        $charts->register([
+//            AgesChart::class,
+//            SampleChart::class
+//        ]);
 
     }
 }
